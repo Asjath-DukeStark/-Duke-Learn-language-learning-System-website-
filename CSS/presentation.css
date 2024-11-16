@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin:o;
+    padding:0;
+    font-family: 'Work Sans', sans-serif; 
+    
+}
+:root {
+    --primary-color: #ff226f;
+    --text-dark: #333333;
+    --white: #ffffff;
+    --bg-color: #1eb2a6;
+    --second-bg-color: #999999;
+    --text-color: #0B8278;
+  }
+
+  .wrapper {
+    height: 100vh;
+    display: grid;
+    font-size: 23px;
+    padding-top: 30px;
+    place-items: center;
+    color: #1eb2a6;
+
+    
+  }
+
+h3{
+  margin-bottom: 0px;
+}  
+
+p{
+  font-size: 35px;
+  margin-top: 0px;
+  margin-left: 50px;
+  color: #fff;
+
+}
+  
+  .typing-demo {
+    width: 40ch;
+    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+
+}
+
+
+@media(min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+
+}

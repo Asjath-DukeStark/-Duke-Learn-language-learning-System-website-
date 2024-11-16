@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../Images/Logo_finalised.png">
+    <title>Listing Page</title>
+        
+    <link rel="stylesheet" href="./listing.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' >
+        
+</head>
+<body>
+  <header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class='bx bx-menu'></i>
+      </label>
+      <label class="logo"><img class="imgLogo1" src="../images/Logo_finalised.png" alt="Logo_3"></label>
+      <ul class="nav_ul">
+          <li class="nav_list"><a class="home" href="../HTML/Home.html"> HOME</a></li>
+          <li class="nav_list"><a class="gallery" href="../HTML/Gallery.html"> GALLERY</a></li>
+          <li class="nav_list"><a class="listing" href="../Listing/listing.html"> LISTING PAGE</a></li>
+          <li class="nav_list"><a class="newsletter" href="../HTML/newletter.html"> NEWS LETTER</a></li>
+          <li class="nav_list"><a class="quiz" href="../HTML/Quiz.html"> QUIZ</a></li>
+          <li class="nav_list"><a class="shop" href="../HTML/product.html"> SHOP</a></li>
+          <li class="nav_list"><a class="query" href="../HTML/Query.html"> COMMENT</a></li>
+          <li class="nav_list"><a class="aboutus" href="../HTML/aboutUs.html"> ABOUT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+ 
+    <section class="main">
+      <div class="container">
+        
+
+        <div class="container__left">            
+          <h1>Word From Our Customers</h1>
+          <p>Embark on a journey through the heartfelt stories of our thriving community of over 10,000+ satisfied customers, 
+            each sharing their unique experiences with us!</p>
+
+          <button id="addReviewBtn">Add Your Review</button>
+        </div>       
+
+        <div class="container__right" id="commentsContainer">
+          <div class="container-lable">
+            <label for="color-select">Color Theme:</label>
+            <select id="color-select" onchange="changeColorScheme(this.value)">
+              <option value="default">Default</option>
+              <option value="blue">Blue</option>
+              <option value="purple">Purple</option>
+              <option value="orange">Orange</option>
+            </select>
+            <label for="bg-select">Change Background:</label>
+            <select id="bg-select" onchange="changeBackgroundImage(this.value)">
+              <option value="default-bg.png">Default</option>
+              <option value="Blue-bg.png">Background 1</option>
+              <option value="Purple-bg.png">Background 2</option>
+              <option value="Orange-bg.png">Background 3</option>
+            </select>
+          </div>
+          <!-- <div class="container-lable">
+            
+          </div> -->
+            <!-- Comments here -->
+        </div>
+      </div>
+    </section>
+
+    <section class='newletter'>
+      <div class='container flexSB'>
+        <div class='left row'>
+          <h1>Newsletter</h1>
+          <span>Stay tune and get the latest update</span>
+        </div>
+        <div class='right row'>
+          <a href="../HTML/newletter.html" class="btn-click-here">Click Here <i class='bx bx-paper-plane' ></i></a>
+        </div>
+      </div>
+    </section>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Your Review</h2>
+
+        <form id="reviewForm" onsubmit="return validateReviewForm()">
+          <input type="text" placeholder="Name" Name="name">
+          <div id="nameError" class="error-message"></div> 
+          <textarea placeholder="Comment" name="comment"></textarea>
+          <div id="commentError" class="error-message"></div> 
+      
+
+          <div class="Add_rating" id="userRating">
+            <span class="fa fa-star" data-rating="1"></span>
+            <span class="fa fa-star" data-rating="2"></span>
+            <span class="fa fa-star" data-rating="3"></span>
+            <span class="fa fa-star" data-rating="4"></span>
+            <span class="fa fa-star" data-rating="5"></span>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>             
+
+      </div>      
+    </div>
+
+    <div id="successMessage" class="success-message" style="display: none;">
+      Thank you for your response!
+    </div>  
+
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <img class="Logo_footer" src="../Images/Logo_finalised.png" alt="Logo_3">
+        <p class="footer-links">designed by <a href="../HTML/Nethma.html">Nethma Gunarathne</a></p>
+        <p class="footer-company-name">Duke Learn © 2024</p>
+      </div>
+      <div class="footer-center">
+        <div>
+          <i class='bx bxs-edit-location'></i>
+          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        </div>
+        <div>
+          <i class='bx bx-phone'></i>
+          <p>+1.555.555.5555</p>
+        </div>
+        <div>
+          <i class='bx bx-envelope'></i>
+          <p><a href="mailto:dk.learn0@gmail.com">dk.learn0@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About the Website</span>
+          "Duke Learn is your ultimate destination for language acquisition. We're committed to providing a platform that empowers learners of all levels to master new languages with confidence and ease.. Join us on this exciting journey to unlock the doors to global communication."
+        </p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/profile.php?id=61557846374798&mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+          <a href="https://x.com/DkLearn0?t=eaCB4yDQFcCyYPBcXETYmA&s=08"><i class='bx bxl-twitter'></i></a>
+          <a href="https://www.instagram.com/duke.learn?igsh=YXVsOWlhczl0Nnkx""><i class='bx bxl-instagram-alt'></i></a>
+          <a href="https://www.linkedin.com/in/duke-learn-42a1b4303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+  
+        </div>                                 
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./listing.js"></script>
+    <script src="../JS/Home.js"></script>
+</body>
+</html>
